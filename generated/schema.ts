@@ -77,6 +77,15 @@ export class TransferEntity extends Entity {
   set tokenURI(value: string) {
     this.set("tokenURI", Value.fromString(value));
   }
+
+  get gene(): BigInt {
+    let value = this.get("gene");
+    return value.toBigInt();
+  }
+
+  set gene(value: BigInt) {
+    this.set("gene", Value.fromBigInt(value));
+  }
 }
 
 export class MintedEntity extends Entity {

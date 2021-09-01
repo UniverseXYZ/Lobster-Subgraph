@@ -4,6 +4,7 @@ type TransferEntity @entity {
   to: Bytes!
   tokenId: BigInt!
   tokenURI: String!
+  gene: BigInt!
 }
 
 type MintedEntity @entity {
