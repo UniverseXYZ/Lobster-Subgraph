@@ -1,0 +1,20 @@
+type TransferEntity @entity {
+  id: ID!
+  from: Bytes!
+  to: Bytes!
+  tokenId: BigInt!
+  tokenURI: String!
+}
+
+type MintedEntity @entity {
+  id: ID!
+  to: Bytes!
+  tokenId: BigInt!
+  tokenURI: String!
+}
+
+type Trait @entity {
+  id: ID!
+  count: BigInt
+  rarity: BigDecimal
+}
