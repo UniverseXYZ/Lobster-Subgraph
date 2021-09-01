@@ -127,6 +127,16 @@ export class MintedEntity extends Entity {
     this.set("tokenId", Value.fromBigInt(value));
   }
 
+  get newGene(): BigInt {
+    let value = this.get("newGene");
+    return value.toBigInt();
+  }
+
+  set newGene(value: BigInt) {
+    this.set("newGene", Value.fromBigInt(value));
+  }
+
+
   get tokenURI(): string {
     let value = this.get("tokenURI");
     return value.toString();
