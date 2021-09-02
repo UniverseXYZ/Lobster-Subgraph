@@ -98,6 +98,24 @@ export class BulkBuyLimitChanged__Params {
   }
 }
 
+export class LobsterPriceChanged extends ethereum.Event {
+  get params(): LobsterPriceChanged__Params {
+    return new LobsterPriceChanged__Params(this);
+  }
+}
+
+export class LobsterPriceChanged__Params {
+  _event: LobsterPriceChanged;
+
+  constructor(event: LobsterPriceChanged) {
+    this._event = event;
+  }
+
+  get newLobsterPrice(): BigInt {
+    return this._event.parameters[0].value.toBigInt();
+  }
+}
+
 export class MaxSupplyChanged extends ethereum.Event {
   get params(): MaxSupplyChanged__Params {
     return new MaxSupplyChanged__Params(this);
@@ -131,24 +149,6 @@ export class Paused__Params {
 
   get account(): Address {
     return this._event.parameters[0].value.toAddress();
-  }
-}
-
-export class PolymorphPriceChanged extends ethereum.Event {
-  get params(): PolymorphPriceChanged__Params {
-    return new PolymorphPriceChanged__Params(this);
-  }
-}
-
-export class PolymorphPriceChanged__Params {
-  _event: PolymorphPriceChanged;
-
-  constructor(event: PolymorphPriceChanged) {
-    this._event = event;
-  }
-
-  get newPolymorphPrice(): BigInt {
-    return this._event.parameters[0].value.toBigInt();
   }
 }
 
@@ -1520,6 +1520,36 @@ export class SetBulkBuyLimitCall__Outputs {
   }
 }
 
+export class SetLobsterPriceCall extends ethereum.Call {
+  get inputs(): SetLobsterPriceCall__Inputs {
+    return new SetLobsterPriceCall__Inputs(this);
+  }
+
+  get outputs(): SetLobsterPriceCall__Outputs {
+    return new SetLobsterPriceCall__Outputs(this);
+  }
+}
+
+export class SetLobsterPriceCall__Inputs {
+  _call: SetLobsterPriceCall;
+
+  constructor(call: SetLobsterPriceCall) {
+    this._call = call;
+  }
+
+  get newLobsterPrice(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+}
+
+export class SetLobsterPriceCall__Outputs {
+  _call: SetLobsterPriceCall;
+
+  constructor(call: SetLobsterPriceCall) {
+    this._call = call;
+  }
+}
+
 export class SetMaxSupplyCall extends ethereum.Call {
   get inputs(): SetMaxSupplyCall__Inputs {
     return new SetMaxSupplyCall__Inputs(this);
@@ -1546,36 +1576,6 @@ export class SetMaxSupplyCall__Outputs {
   _call: SetMaxSupplyCall;
 
   constructor(call: SetMaxSupplyCall) {
-    this._call = call;
-  }
-}
-
-export class SetPolymorphPriceCall extends ethereum.Call {
-  get inputs(): SetPolymorphPriceCall__Inputs {
-    return new SetPolymorphPriceCall__Inputs(this);
-  }
-
-  get outputs(): SetPolymorphPriceCall__Outputs {
-    return new SetPolymorphPriceCall__Outputs(this);
-  }
-}
-
-export class SetPolymorphPriceCall__Inputs {
-  _call: SetPolymorphPriceCall;
-
-  constructor(call: SetPolymorphPriceCall) {
-    this._call = call;
-  }
-
-  get newPolymorphPrice(): BigInt {
-    return this._call.inputValues[0].value.toBigInt();
-  }
-}
-
-export class SetPolymorphPriceCall__Outputs {
-  _call: SetPolymorphPriceCall;
-
-  constructor(call: SetPolymorphPriceCall) {
     this._call = call;
   }
 }
