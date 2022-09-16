@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: Contract
-    network: ropsten
+    network: goerli
     source:
-      address: "0x39AaeDDCcF447E9c915D7aaE7be8f00e7c80447d"
+      address: "0x19946452eF676B28F32BdCcCAF69aA75DD61d1ac"
       abi: Contract
-      startBlock: 10954513
+      startBlock: 7597381
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
